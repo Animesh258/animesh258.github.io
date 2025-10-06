@@ -28,4 +28,4 @@ Each project reflects both analytical thinking and attention to presentation —
 
 ### 📫 Contact
 
-Connect on [LinkedIn](linkedin.com/in/animesh-maity-5ab563376) or explore more projects on [GitHub](https://github.com/animesh258).
+Connect on [LinkedIn](https://www.linkedin.com/in/animesh-maity-5ab563376/) or explore more projects on [GitHub](https://github.com/animesh258).
