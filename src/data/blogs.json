@@ -1,0 +1,74 @@
+[
+  {
+    "id": 1,
+    "title": "🚀 My First Dashboard Project! 📊",
+    "banner": "/assets/images/blog-banners/AM-Blog-Banner-Blog-001.png",
+    "summary": "Sharing my journey of creating my first Excel dashboard, the challenges I faced, and the key lessons learned about data visualization and user experience.",
+    "date": "Aug 2025",
+    "tags": ["Excel", "Dashboard", "Data Analysis"],
+    "link": "https://www.linkedin.com/posts/animesh-maity-5ab563376_exceldashboard-dataanalysis-careertransition-activity-7353814826088898562-R971?utm_source=share&utm_medium=member_desktop&rcm=ACoAAFz8mZMB_L8-fEobaXWIWnTl_8mJHxn82vM"
+  },
+  {
+    "id": 2,
+    "title": "🔍 Real Excel Learning from My First Dashboard",
+    "banner": "/assets/images/blog-banners/AM-Blog-Banner-Blog-002.png",
+    "summary": "Reflecting on the practical insights gained while building my first Excel dashboard, including tips on data organization, formula efficiency, and design principles.",
+    "date": "Aug 2025",
+    "tags": ["Excel", "Dashboard", "Data Analysis"],
+    "link": "https://www.linkedin.com/posts/animesh-maity-5ab563376_exceldashboard-dataanalysis-exceltips-activity-7356729256942436352-p_kV?utm_source=share&utm_medium=member_desktop&rcm=ACoAAFz8mZMB_L8-fEobaXWIWnTl_8mJHxn82vM"
+  },
+  {
+    "id": 3,
+    "title": "🧠 SELECT 1 FROM DUEL - But Why Though?",
+    "banner": "/assets/images/blog-banners/AM-Blog-Banner-Blog-001.png",
+    "summary": "Exploring the rationale behind using dual SELECT statements in SQL queries, and how this approach can optimize data retrieval and improve query performance.",
+    "date": "Aug 2025",
+    "tags": ["sql", "data analytics", "sql dialects", "spark sql"],
+    "link": "https://www.linkedin.com/posts/animesh-maity-5ab563376_sql-dataanalytics-sparksql-activity-7359214294644727809-iCBU?utm_source=share&utm_medium=member_desktop&rcm=ACoAAFz8mZMB_L8-fEobaXWIWnTl_8mJHxn82vM"
+  },
+  {
+    "id": 4,
+    "title": "Which one should I learn first? 🤯",
+    "banner": "/assets/images/blog-banners/AM-Blog-Banner-Blog-001.png",
+    "summary": "A comparative analysis of popular database management systems to help beginners decide which SQL platform to learn first based on their career goals and project needs.",
+    "date": "Aug 2025",
+    "tags": ["sql", "database", "data analytics", "sql dialects"],
+    "link": "https://www.linkedin.com/posts/animesh-maity-5ab563376_%F0%9D%90%88-%F0%9D%90%9A%F0%9D%90%A5%F0%9D%90%A6%F0%9D%90%A8%F0%9D%90%AC%F0%9D%90%AD-%F0%9D%90%9D%F0%9D%90%A2%F0%9D%90%9D%F0%9D%90%A7%F0%9D%90%AD-%F0%9D%90%AC%F0%9D%90%AD%F0%9D%90%9A%F0%9D%90%AB%F0%9D%90%AD-%F0%9D%90%A5-activity-7361754739891396608-J-En?utm_source=share&utm_medium=member_desktop&rcm=ACoAAFz8mZMB_L8-fEobaXWIWnTl_8mJHxn82vM"
+  },
+  {
+    "id": 5,
+    "title": "✨ Hidden Gems in Excel #1 ✨",
+    "banner": "/assets/images/blog-banners/AM-Blog-Banner-Blog-001.png",
+    "summary": "Unveiling some of the lesser-known features and tricks in Excel that can significantly enhance dashboard's aesthetics and user experience.",
+    "date": "Sep 2025",
+    "tags": ["Excel", "Dashboard", "Data Visualization", "linked pictures", "heatmaps", "heat maps in excel"],
+    "link": "https://www.linkedin.com/posts/animesh-maity-5ab563376_excel-datavisualization-portfoliojourney-activity-7378398203068436480-1LZB?utm_source=share&utm_medium=member_desktop&rcm=ACoAAFz8mZMB_L8-fEobaXWIWnTl_8mJHxn82vM"
+  },
+  {
+    "id": 6,
+    "title": "Who says Word docs can’t look like VS Code? 😉",
+    "banner": "/assets/images/blog-banners/AM-Blog-Banner-Blog-001.png",
+    "summary": "A creative guide on customizing Microsoft Word documents to mimic the sleek and modern interface of VS Code, enhancing the appearance of project documentation.",
+    "date": "Oct 2025",
+    "tags": ["MS Word", "Documentation", "Productivity Hacks", "Word doc hacks", "code editor style"],
+    "link": "https://www.linkedin.com/posts/animesh-maity-5ab563376_ms-word-documentation-hacks-activity-7381316126107963392-6LEM?utm_source=share&utm_medium=member_desktop&rcm=ACoAAFz8mZMB_L8-fEobaXWIWnTl_8mJHxn82vM"
+  },
+  {
+    "id": 7,
+    "title": "✨ Hidden Gems in Excel #2 ✨",
+    "banner": "/assets/images/blog-banners/AM-Blog-Banner-Blog-001.png",
+    "summary": "Diving deeper into Excel's hidden features, this article explores advanced tips and tricks to further elevate your dashboard designs and improve data presentation.",
+    "date": "Oct 2025",
+    "tags": ["Excel", "Dashboard", "Data Visualization", "excel tips and tricks", "advanced excel", "linked pictures", "Lookup", "Image Lookup", "VLookUp", "dynamic backgrounds", "embeded pictures into cells"],
+    "link": "https://www.linkedin.com/posts/animesh-maity-5ab563376_excel-exceltips-dashboarddesign-activity-7383852858770665472-k5WZ?utm_source=share&utm_medium=member_desktop&rcm=ACoAAFz8mZMB_L8-fEobaXWIWnTl_8mJHxn82vM"
+  },
+  {
+    "id": 8,
+    "title": "7 tips for an effective Excel dashboard",
+    "banner": "/assets/images/blog-banners/AM-Blog-Banner-Blog-001.png",
+    "summary": "Essential tips and best practices for creating impactful Excel dashboards that effectively communicate data insights and support decision-making processes.",
+    "date": "Oct 2025",
+    "tags": ["Excel", "Dashboard", "Data Visualization", "dashboard tips", "excel dashboard best practices"],
+    "link": "https://www.linkedin.com/posts/animesh-maity-5ab563376_excel-dashboard-dataanalytics-activity-7388229019709673473-eR19?utm_source=share&utm_medium=member_desktop&rcm=ACoAAFz8mZMB_L8-fEobaXWIWnTl_8mJHxn82vM"
+  }
+]
