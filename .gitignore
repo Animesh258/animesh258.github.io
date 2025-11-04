@@ -7,14 +7,24 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
+# Dependencies
 node_modules
-dist
+
+# Build Artifacts
+# IMPORTANT: 'dist' must be tracked for GitHub Pages deployment.
+# dist 
 dist-ssr
+# dist-ssr is for server-side rendering, which we don't need for static hosting.
+
+# Local Environment Variables and Overrides
+.env
+# Keep the actual .env file ignored to protect secrets.
 *.local
 
 # Editor directories and files
 .vscode/*
-!.vscode/extensions.json
+# UNLESS you want to share recommended extensions:
+!.vscode/extensions.json 
 .idea
 .DS_Store
 *.suo
@@ -22,6 +32,3 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
-
-# Environment variables
-.env
