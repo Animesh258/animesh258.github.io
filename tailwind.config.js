@@ -1,5 +1,5 @@
 /** @type {import('tailwindcss').Config} */
-import Color from "color";
+import Color from "color"
 
 export default {
   darkMode: 'class',
@@ -88,4 +88,4 @@ export default {
       });
     },
   ],
-};
+}

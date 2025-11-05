@@ -80,9 +80,11 @@ my-portfolio/
 ├── public/                  # Static files (Favicons, CV PDF, large videos)
 ├── src/
 │   ├── components/
+│   │   ├── common/          # Common components (Tooltip, PageTransition, ScrollToTop)
 │   │   ├── sections/        # Full page sections (Hero, About, Projects, Contact)
 │   │   └── ui/              # Reusable UI elements (Header, Card, Button, Toggle)
 │   ├── context/             # ThemeContext (handles dark/light state)
+│   ├── configs/             # Static Configurations (handles dark/light state)
 │   ├── data/                # JSON files for Projects and Blogs (Data Source)
 │   ├── media/               # Component-specific assets (e.g., project thumbnails)
 │   ├── App.jsx              # Main router and layout
