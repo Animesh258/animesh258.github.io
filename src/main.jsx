@@ -4,14 +4,14 @@ import { createRoot } from "react-dom/client";
 import "./index.css";
 import App from "./App";
 import { ThemeProvider } from "./context/ThemeContext";
-import { HashRouter } from "react-router-dom"; // ✅ import router
+import { BrowserRouter } from "react-router-dom"; // ✅ import router
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <HashRouter>
+    <BrowserRouter>
       <ThemeProvider>
         <App />
       </ThemeProvider>
-    </HashRouter>
+    </BrowserRouter>
   </StrictMode>
 );
