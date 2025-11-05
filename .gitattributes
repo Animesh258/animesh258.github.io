@@ -1,0 +1,6 @@
+# Treat compiled assets as binary to prevent line ending conversion
+*.js binary
+*.css binary
+
+# More specifically for the dist folder
+dist/** text eol=lf
