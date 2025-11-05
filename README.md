@@ -86,7 +86,8 @@ my-portfolio/
 │   ├── context/             # ThemeContext (handles dark/light state)
 │   ├── configs/             # Static Configurations (handles dark/light state)
 │   ├── data/                # JSON files for Projects and Blogs (Data Source)
-│   ├── media/               # Component-specific assets (e.g., project thumbnails)
+│   ├── media/               # Component-specific assets
+│   ├── pages/               # 
 │   ├── App.jsx              # Main router and layout
 │   └── main.jsx
 └── package.json
