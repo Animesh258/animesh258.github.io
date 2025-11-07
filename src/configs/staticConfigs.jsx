@@ -1,5 +1,5 @@
 import React from "react";
-import { FaHome, FaInfoCircle } from "react-icons/fa";
+import { FaHome } from "react-icons/fa";
 import { FaMagnifyingGlassChart  } from "react-icons/fa6";
 import { TbBulbFilled } from "react-icons/tb";
 import { IoMdChatbubbles } from "react-icons/io";
@@ -21,18 +21,18 @@ export const navMapping = {
   },
   "/blogs": {
     navItems: [
-      { name: "Home", href: "/", icon: FaHome },
+      { name: "Home", to: "/", icon: FaHome },
     ],
     showFooterNavs: false,
   },
   "/projects": {
     navItems: [
-      { name: "Home", href: "/", icon: FaHome },
+      { name: "Home", to: "/", icon: FaHome },
     ],
     showFooterNavs: false,
     singlePageNavItems: [
-      { name: "Home", href: "/", icon: FaHome },
-      { name: "Project Gallery", href: "/projects", icon: CiGrid42 },
+      { name: "Home", to: "/", icon: FaHome },
+      { name: "Project Gallery", to: "/projects", icon: CiGrid42 },
     ]
   }
 };

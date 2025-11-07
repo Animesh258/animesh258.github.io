@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { projectBannerBasePath, defaultBannerImage } from "../../configs/staticConfigs";
 import BadgeTag from "../ui/BadgeTag";
 import TechIcon from "./TechIcon";
@@ -76,14 +77,14 @@ const ProjectCard = ({ project, isFixedHeight = false }) => {
                     {/* CTAs - Side-by-side using flex-row and flex-1 */}
                     <div className="flex flex-row gap-3 pt-4 font-body">
                         {/* 1. Read Case Study */}
-                        <a
-                            href={`/projects?projectId=${project.id}`}
+                        <Link
+                            to={`/projects/${project.id}`}
                             // Added flex-1 and inline-flex for proper alignment
                             className="flex-1 inline-flex items-center justify-center space-x-2 text-sm"
                             aria-label={`Read the case study for ${project.title}`}
                         >
                             🕮 Read Case Study
-                        </a>
+                        </Link>
                         {/* 2. View in repo </> */}
                         {project.githubUrl && <a
                             href={project.githubUrl}

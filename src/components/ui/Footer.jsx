@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { navMapping, safeNavItems, socialLinks } from "../../configs/staticConfigs";
 import { useLocation } from "react-router-dom";
 import Tooltip from "../common/Tooltip";
@@ -11,6 +12,22 @@ const Footer = (props) => {
   const currentMapping = navMapping[basePath] || {};
   const showFooterNavs = currentMapping.showFooterNavs;
   const navItems = showFooterNavs ? (currentMapping.navItems || safeNavItems) : safeNavItems;  
+
+  const handleNavClick = (href) => {
+
+    if (href.startsWith("#")) {
+      // If same-page anchor — smooth scroll and update hash manually
+      const element = document.querySelector(href);
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth" });
+        // Update URL hash manually (so it appears in the address bar)
+        window.location.hash = href;
+      }
+    } else {
+      // If navigating to a different page
+      window.location.href = href;
+    }
+  };
 
   return (
     <footer className="bg-[var(--color-bg-primary)] border-t border-accent-primary/30 text-[var(--color-text-primary)] py-10 mt-20 transition-colors duration-500">
@@ -59,17 +76,37 @@ const Footer = (props) => {
         <div className="hidden lg:block">
           <h3 className="font-heading mb-3 text-lg">Explore</h3>
           <ul className="space-y-2 text-sm">
-            {navItems.map((item) => (
-              <li key={item.name.toLowerCase()}>
-                <a
-                  href={`${item.href}`}
-                  className="hover:text-accent-secondary transition-colors duration-300"
-                >
-                  {item.icon && <item.icon className="inline-block mr-2 w-4 h-4" />}
-                  {item.name}
-                </a>
-              </li>
-            ))}
+            {navItems.map((item) => {
+              if (item.href) {
+                return (
+                  <li key={item.name.toLowerCase()}>
+                    <Link
+                      onClick={() => handleNavClick(`${item.href}`)}
+                      className="hover:text-accent-secondary transition-colors duration-300"
+                    >
+                      {item.icon && <item.icon className="inline-block mr-2 w-4 h-4" />}
+                      {item.name}
+                    </Link>
+                  </li>
+                )
+              } else if(item.to) {
+                return (
+                  <li key={item.name.toLowerCase()}>
+                    <Link
+                      to={item.to}
+                      className="hover:text-accent-secondary transition-colors duration-300"
+                    >
+                      {item.icon && <item.icon className="inline-block mr-2 w-4 h-4" />}
+                      {item.name}
+                    </Link>
+                  </li>
+                )
+              } else {
+                return null;
+              }
+            })}
+              
+              
           </ul>
         </div>
 

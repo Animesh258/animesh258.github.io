@@ -118,7 +118,7 @@ const HeroSection = () => {
 
           <button
             className="btn-primary mt-8"
-            onClick={() => document.querySelector("#projects")?.scrollIntoView({ behavior: "smooth" })}
+            onClick={() => document.querySelector("#featured-projects")?.scrollIntoView({ behavior: "smooth" })}
           >
             See My Recent Work
           </button>

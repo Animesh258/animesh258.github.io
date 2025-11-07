@@ -1,5 +1,5 @@
 import React from "react";
-import { useLocation, Link } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import projectsData from "../../data/projects.json";
 import { projectBannerBasePath, defaultBannerImage } from "../../configs/staticConfigs";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
@@ -12,16 +12,14 @@ const getPublicImagePath = (imageName) => {
 };
 
 const SingleProject = () => {
-    const { search } = useLocation();
-    const queryParams = new URLSearchParams(search);
-    const projectId = queryParams.get("projectId");
+    const { projectId } = useParams(); // Get ID from URL /projects/:projectId
     const project = projectsData.find(p => p.id === parseInt(projectId));
 
     if (!project) {
         return (
             <div className="pt-36 text-center min-h-screen">
                 <h2 className="text-xl font-heading">Project Not Found</h2>
-                <Link href="/projects" className="mt-4 block">
+                <Link to="/projects" className="mt-4 block">
                     <FaArrowLeft size={16} className="inline-block" /> Go to All Projects
                 </Link>
             </div>

@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
+import { Link, useLocation } from "react-router-dom";
 import { RiMenuLine, RiCloseLine } from "react-icons/ri";
 import { FaSwatchbook } from "react-icons/fa";
 import { GiSkills } from "react-icons/gi";
 import { useTheme } from "../../context/ThemeContext";
 import ThemeToggle from "./ThemeToggle";
-import { useLocation } from "react-router-dom";
 import { navMapping, navigateToResume, navigateToGuideline } from "../../configs/staticConfigs";
 import Tooltip from "../common/Tooltip";
 
@@ -14,7 +14,12 @@ const Header = (props) => {
   const { theme } = useTheme();
   const location = useLocation();
 
-  const basePath = location.pathname;
+  let basePath = location.pathname;
+
+  // If the path starts with /projects/, normalize it to /projects
+  if (basePath.startsWith("/projects")) {
+    basePath = "/projects";
+  }
 
   let navItems = navMapping[basePath]?.navItems || [];
   if (props.useSinglePageNav && navMapping[basePath]?.singlePageNavItems) {
@@ -35,10 +40,18 @@ const Header = (props) => {
 
   const handleNavClick = (href) => {
     closeMenu();
+
     if (href.startsWith("#")) {
-      setTimeout(() => {
-        document.querySelector(href)?.scrollIntoView({ behavior: "smooth" });
-      }, 100);
+      // If same-page anchor — smooth scroll and update hash manually
+      const element = document.querySelector(href);
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth" });
+        // Update URL hash manually (so it appears in the address bar)
+        window.location.hash = href;
+      }
+    } else {
+      // If navigating to a different page
+      window.location.href = href;
     }
   };
 
@@ -56,7 +69,7 @@ const Header = (props) => {
     <header className={headerClasses}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex justify-between items-center">
         {/* Logo */}
-        <a
+        <Link
           href="/"
           onClick={() => handleNavClick("#home")}
           className="flex items-center gap-2"
@@ -71,7 +84,7 @@ const Header = (props) => {
             alt="Animesh Maity Logo"
             className="h-16 lg:h-20 w-auto transition-transform duration-600 hover:scale-105"
           />
-        </a>
+        </Link>
 
         {/* Right section (Nav + Theme + Menu) */}
         <div className="flex items-center gap-12">
@@ -79,17 +92,36 @@ const Header = (props) => {
           {/* 1. Full Navigation (Visible on XL screens) */}
           {/* ------------------------------------------- */}
           <nav className="hidden xl:flex items-center space-x-4">
-            {navItems.map((item) => (
-              <a
-                key={item.name}
-                href={item.href}
-                onClick={() => handleNavClick(item.href)}
-                className="text-md px-2 font-medium text-[var(--color-text-primary)] hover:text-accent-secondary transition-colors duration-200 flex items-center gap-1"
-              >
-                {item.icon && <item.icon className="inline-block w-4 h-4" />}
-                {item.name}
-              </a>
-            ))}
+            {navItems.map((item) => {
+              if (item.href) {
+                // Anchor link scrolling
+                return (
+                  <Link
+                    key={item.name}
+                    onClick={() => handleNavClick(item.href)}
+                    className="text-md px-2 font-medium text-[var(--color-text-primary)] hover:text-accent-secondary transition-colors duration-200 flex items-center gap-1"
+                  >
+                    {item.icon && <item.icon className="inline-block w-4 h-4" />}
+                    {item.name}
+                  </Link>
+                );
+              } else if (item.to) {
+                // React Router navigation
+                return (
+                  <Link
+                    key={item.name}
+                    to={item.to}
+                    className="text-md px-2 font-medium text-[var(--color-text-primary)] hover:text-accent-secondary transition-colors duration-200 flex items-center gap-1"
+                  >
+                    {item.icon && <item.icon className="inline-block w-4 h-4" />}
+                    {item.name}
+                  </Link>
+                );
+              } else {
+                // Fallback in case neither href nor to is defined
+                return null;
+              }
+            })}
             <button
               onClick={() => {
                 navigateToResume();
@@ -107,9 +139,8 @@ const Header = (props) => {
           <nav className="hidden md:flex xl:hidden items-center space-x-2">
             {navItems.map((item) => (
               <Tooltip key={item.name} label={item.name} side="bottom">
-                <a
+                <Link
                   key={item.name}
-                  href={item.href}
                   onClick={() => handleNavClick(item.href)}
                   // Apply the button styling for better hover effect on icons
                   className="p-2 rounded-full text-[var(--color-text-primary)] hover:text-accent-secondary hover:bg-support-muted/20 transition-colors duration-200"
@@ -117,7 +148,7 @@ const Header = (props) => {
                 >
                   {/* Only show the icon */}
                   {item.icon && <item.icon className="w-6 h-6" />}
-                </a>
+                </Link>
               </Tooltip>
             ))}
             <Tooltip key="Resume" label="Resume" side="bottom">
@@ -159,15 +190,14 @@ const Header = (props) => {
       >
         <nav className="px-4 pt-2 pb-4 flex flex-col gap-2 bg-[var(--color-bg-primary)] border-t border-accent-primary/20">
           {navItems.map((item) => (
-            <a
+            <Link
               key={item.name}
-              href={item.href}
               onClick={() => handleNavClick(item.href)}
               className="py-2 text-[var(--color-text-primary)] hover:text-accent-secondary transition-colors"
             >
               {item.icon && <item.icon className="inline-block mr-2 w-4 h-4" />}
               {item.name}
-            </a>
+            </Link>
           ))}
           <button
             onClick={() => {

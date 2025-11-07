@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { FaHome, FaArrowLeft, FaArrowRight } from "react-icons/fa";
 import { FaMagnifyingGlassChart } from "react-icons/fa6";
 import { TbBulbFilled } from "react-icons/tb";
@@ -23,7 +24,7 @@ const NotFoundPage = () => {
           </p>
           <p className="text-sm sm:text-base text-support-warning font-bold mt-4">
             404 Error: Page Not Found 
-            <a href="/"> ↩ Return Home <FaHome className="mr-2 w-4 h-4 inline-block" /></a>
+            <Link href="/"> ↩ Return Home <FaHome className="mr-2 w-4 h-4 inline-block" /></Link>
           </p>
           
         </div>
@@ -51,14 +52,14 @@ const NotFoundPage = () => {
             {/* Option A */}
             <div className="space-y-2">
               
-              <a
+              <Link
                 href="/projects"
                 className="btn-outline px-4 py-2 flex items-center justify-center text-md"
               >
                 A. 
                 <FaArrowLeft className="mx-2" /> 
                 <FaMagnifyingGlassChart className="mr-2" /> Projects
-              </a>
+              </Link>
               <p className="text-xs sm:text-sm text-[var(--color-text-primary)]">
                 ← 🚶 Follow the Analyst
               </p>
@@ -66,13 +67,13 @@ const NotFoundPage = () => {
 
             {/* Option B */}
             <div className="space-y-2">
-              <a
+              <Link
                 href="/blogs"
                 className="btn-outline px-4 py-2 flex items-center justify-center text-md"
               >
                 B. 
                 <TbBulbFilled className="mx-2" /> Insights <FaArrowRight className="ml-2" />
-              </a>
+              </Link>
               <p className="text-xs sm:text-sm text-[var(--color-text-primary)]">
                 Follow the Designer 🤸 →
               </p>
@@ -81,13 +82,13 @@ const NotFoundPage = () => {
 
           {/* Option C (Always below) */}
           <div className="space-y-2 text-center">
-            <a
+            <Link
               href="/"
               className="btn-outline px-4 py-2 flex items-center justify-center text-md"
             >
               C. 
               Run <BiRun className="mx-2 w-4 h-4"/> <FaHome className="mr-2 w-4 h-4" /> Home
-            </a>
+            </Link>
             <p className="text-xs text-[var(--color-text-primary)] flex items-center justify-center ml-2">
               Before They Argue More <AiFillAlert className="ml-2 w-4 h-4 text-support-warning"/>
             </p>

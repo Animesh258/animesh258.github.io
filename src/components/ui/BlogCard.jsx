@@ -25,9 +25,9 @@ const BlogCard = ({ blog }) => {
           <h3 className="text-lg font-semibold mb-2 line-clamp-2">
             {blog.title}
           </h3>
-          <p className="text-neutral-dark dark:text-neutral-light text-sm mb-3 line-clamp-3">
+          <div className="text-neutral-dark dark:text-neutral-light text-sm mb-3 line-clamp-3">
             <ReactMarkdown>{blog.summary}</ReactMarkdown>
-          </p>
+          </div>
         </div>
 
         <div className="flex items-center justify-between text-sm mt-auto">
