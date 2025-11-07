@@ -5,7 +5,6 @@ import { FaMagnifyingGlassChart } from "react-icons/fa6";
 import { TbBulbFilled } from "react-icons/tb";
 import { BiRun } from "react-icons/bi";
 import { AiFillAlert } from "react-icons/ai";
-import TechIcon from "../components/ui/TechIcon";
 
 const NotFoundPage = () => {
   return (
@@ -24,7 +23,7 @@ const NotFoundPage = () => {
           </p>
           <p className="text-sm sm:text-base text-support-warning font-bold mt-4">
             404 Error: Page Not Found 
-            <Link href="/"> ↩ Return Home <FaHome className="mr-2 w-4 h-4 inline-block" /></Link>
+            <Link to="/"> ↩ Return Home <FaHome className="mr-2 w-4 h-4 inline-block" /></Link>
           </p>
           
         </div>
@@ -53,7 +52,7 @@ const NotFoundPage = () => {
             <div className="space-y-2">
               
               <Link
-                href="/projects"
+                to="/projects"
                 className="btn-outline px-4 py-2 flex items-center justify-center text-md"
               >
                 A. 
@@ -68,7 +67,7 @@ const NotFoundPage = () => {
             {/* Option B */}
             <div className="space-y-2">
               <Link
-                href="/blogs"
+                to="/blogs"
                 className="btn-outline px-4 py-2 flex items-center justify-center text-md"
               >
                 B. 
@@ -83,7 +82,7 @@ const NotFoundPage = () => {
           {/* Option C (Always below) */}
           <div className="space-y-2 text-center">
             <Link
-              href="/"
+              to="/"
               className="btn-outline px-4 py-2 flex items-center justify-center text-md"
             >
               C. 

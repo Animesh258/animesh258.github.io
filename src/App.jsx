@@ -20,6 +20,9 @@ const App = () => {
           <Route path="/blogs" element={<BlogsPage />} />
           <Route path="/projects" element={<ProjectsPage />} />
           <Route path="/projects/:projectId" element={<ProjectsPage />} />
+          {/* Dedicated 404 hash route */}
+          <Route path="/404" element={<NotFoundPage />} />
+          {/* Catch-all for unknown hash paths */}
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
       {/* Toast notifications */}
