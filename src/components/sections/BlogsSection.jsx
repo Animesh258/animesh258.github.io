@@ -10,7 +10,7 @@ const BlogsSection = () => {
 
   return (
     <section
-      id="blogs"
+      id="latest-insights"
       className="bg-surface-primary-light dark:bg-surface-primary-dark/95 pt-36 pb-20 transition-colors duration-500"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">

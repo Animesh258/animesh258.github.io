@@ -2,7 +2,7 @@ import React, { useState, useRef } from "react";
 import emailjs from "@emailjs/browser";
 import ReCAPTCHA from "react-google-recaptcha";
 import { useToast } from "../../context/ToastContext";
-import { FaMapMarkerAlt } from "react-icons/fa";
+import { RiMapPinUserFill } from "react-icons/ri";
 import { socialLinks } from "../../configs/staticConfigs";
 import { emailConfig } from "../../configs/envConfig";
 import BadgeTag from "../ui/BadgeTag";
@@ -106,7 +106,7 @@ const ContactSection = () => {
 
           <div className="flex items-center space-x-3 text-lg">
             <Tooltip label="Location" side="bottom">
-              <FaMapMarkerAlt className="text-accent-primary dark:text-accent-secondary text-2xl transition-colors duration-500" />
+              <RiMapPinUserFill className="text-accent-primary dark:text-accent-secondary text-2xl transition-colors duration-500" />
             </Tooltip>
             <span className="font-semibold">Kolkata, India</span>
           </div>

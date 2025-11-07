@@ -1,12 +1,12 @@
 import React from "react";
-import { navMapping, safeNavItems, socialLinks, getBasePath } from "../../configs/staticConfigs";
+import { navMapping, safeNavItems, socialLinks } from "../../configs/staticConfigs";
 import { useLocation } from "react-router-dom";
 import Tooltip from "../common/Tooltip";
 
 const Footer = (props) => {
   const currentYear = new Date().getFullYear();
   const location = useLocation();
-  const basePath = getBasePath(location.pathname);
+  const basePath = location.pathname;
 
   const currentMapping = navMapping[basePath] || {};
   const showFooterNavs = currentMapping.showFooterNavs;
@@ -84,7 +84,7 @@ const Footer = (props) => {
                 rel="noopener noreferrer"
                 className="hover:text-accent-secondary transition-colors duration-300"
               >
-                Brand Guidelines
+                Identity Kit
               </a>
             </li>
             <li>

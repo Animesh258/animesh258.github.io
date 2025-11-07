@@ -1,23 +1,25 @@
 import React, { useState, useEffect } from "react";
 import { RiMenuLine, RiCloseLine } from "react-icons/ri";
+import { FaSwatchbook } from "react-icons/fa";
 import { GiSkills } from "react-icons/gi";
 import { useTheme } from "../../context/ThemeContext";
 import ThemeToggle from "./ThemeToggle";
 import { useLocation } from "react-router-dom";
-import { navMapping, navigateToResume, getBasePath } from "../../configs/staticConfigs";
+import { navMapping, navigateToResume, navigateToGuideline } from "../../configs/staticConfigs";
 import Tooltip from "../common/Tooltip";
 
-const Header = () => {
+const Header = (props) => {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const { theme } = useTheme();
   const location = useLocation();
 
-  const basePath = getBasePath(location.pathname);
+  const basePath = location.pathname;
 
-
-
-  const navItems = navMapping[basePath]?.navItems || [];
+  let navItems = navMapping[basePath]?.navItems || [];
+  if (props.useSinglePageNav && navMapping[basePath]?.singlePageNavItems) {
+    navItems = navMapping[basePath]?.singlePageNavItems;
+  }
 
   const toggleMenu = () => setIsOpen(!isOpen);
   const closeMenu = () => setIsOpen(false);
@@ -175,6 +177,15 @@ const Header = () => {
             className="py-2 text-[var(--color-text-primary)] hover:text-accent-secondary transition-colors flex items-center gap-1"
           >
             <GiSkills className="w-4 h-6" /> Resume
+          </button>
+          <button
+            onClick={() => {
+              navigateToGuideline();
+              closeMenu();
+            }}
+            className="py-2 text-[var(--color-text-primary)] hover:text-accent-secondary transition-colors flex items-center gap-1"
+          >
+            <FaSwatchbook className="w-4 h-6" /> Identity Kit
           </button>
         </nav>
       </div>

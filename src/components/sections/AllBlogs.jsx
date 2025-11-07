@@ -3,7 +3,7 @@ import blogsData from "../../data/blogs.json";
 import BlogCard from "../ui/BlogCard";
 
 const AllBlogs = () => {
-    const [searchTerm, setSearchTerm] = useState("");
+  const [searchTerm, setSearchTerm] = useState("");
 
   const filteredBlogs = blogsData.filter((blog) =>
     [blog.title, blog.tags, blog.summary]

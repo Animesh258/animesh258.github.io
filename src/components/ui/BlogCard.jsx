@@ -1,5 +1,6 @@
 import React from "react";
 import { FaArrowRight } from "react-icons/fa";
+import ReactMarkdown from "react-markdown";
 
 const BlogCard = ({ blog }) => {
   return (
@@ -25,7 +26,7 @@ const BlogCard = ({ blog }) => {
             {blog.title}
           </h3>
           <p className="text-neutral-dark dark:text-neutral-light text-sm mb-3 line-clamp-3">
-            {blog.summary}
+            <ReactMarkdown>{blog.summary}</ReactMarkdown>
           </p>
         </div>
 

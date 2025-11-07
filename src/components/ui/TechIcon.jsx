@@ -5,7 +5,7 @@ import {
   DiMysql,
   DiPostgresql,
 } from "react-icons/di";
-import { BiSignal3, BiBarChartSquare } from "react-icons/bi";
+import { BiSignal3, BiBarChartSquare, BiFontFamily } from "react-icons/bi";
 import {
   FaFigma,
   FaChartBar,
@@ -17,6 +17,7 @@ import {
   FaWrench,
   FaMedal,
   FaStar,
+  FaPencilRuler,
 } from "react-icons/fa";
 import {
   SiTableau,
@@ -30,9 +31,10 @@ import {
 } from "react-icons/si";
 import { FiBarChart2, FiDatabase as FiDatabaseProcess } from "react-icons/fi";
 import { GiMagicBroom, GiPowerLightning  } from "react-icons/gi";
-import { MdOutlinePivotTableChart, MdSchema, MdQueryStats } from "react-icons/md";
+import { MdOutlinePivotTableChart, MdSchema, MdQueryStats, MdColorLens, MdOutlineSlowMotionVideo } from "react-icons/md";
 import { RiFormula } from "react-icons/ri";
 import { PiCardsFill } from "react-icons/pi";
+import { TbMoodCog } from "react-icons/tb";
 import Tooltip from "../common/Tooltip";
 
 
@@ -65,6 +67,7 @@ const toolIconMap = {
   powerpivot: MdOutlinePivotTableChart,
   starschema: FaStar,
   medallionarchitecture: FaMedal,
+  animation: MdOutlineSlowMotionVideo,
 };
 
 // --- Process icon map ---
@@ -75,9 +78,13 @@ const processIconMap = {
   datacleaning: GiMagicBroom,
   dataanalysis: FiDatabaseProcess,
   branding: FaPaintBrush,
+  logodesign: FaPencilRuler,
   featureengineering: FaWrench,
   datamodeling: MdSchema,
   eda: MdQueryStats,
+  typography: BiFontFamily,
+  colortheory: MdColorLens,
+  moodboarding: TbMoodCog,
 };
 
 const TechIcon = ({ name, size = 26, className = "" }) => {
@@ -105,7 +112,7 @@ const TechIcon = ({ name, size = 26, className = "" }) => {
         inline-flex items-center justify-center
         text-accent-primary hover:text-accent-secondary
         dark:text-accent-secondary dark:hover:text-accent-primary
-        transition-all duration-300 ${className}
+        transition-all duration-300 ${className} cursor:default
       `}
     >
       {iconEl}

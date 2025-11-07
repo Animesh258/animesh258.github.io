@@ -16,9 +16,9 @@ const Home = () => {
 
       <main className="space-y-24 fade-in">
         <HeroSection />
-        <AboutSection />
         <ProjectsSection />
         <BlogsSection />
+        <AboutSection />
         <ContactSection />
       </main>
 
