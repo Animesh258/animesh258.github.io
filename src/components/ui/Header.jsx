@@ -193,7 +193,7 @@ const Header = (props) => {
 
             const linkProps = item.href 
                   ? { onClick: () => handleNavClick(item.href) } 
-                  : { to: item.to };
+                  : { to: item.to, onClick: () => closeMenu() };
 
             return (
               <Link
