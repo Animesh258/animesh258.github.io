@@ -93,34 +93,23 @@ const Header = (props) => {
           {/* ------------------------------------------- */}
           <nav className="hidden xl:flex items-center space-x-4">
             {navItems.map((item) => {
-              if (item.href) {
-                // Anchor link scrolling
-                return (
+              // Only render an item if it has either 'href' or 'to' defined
+              if (!item.href && !item.to) return null;
+
+              const linkProps = item.href 
+                  ? { onClick: () => handleNavClick(item.href) } 
+                  : { to: item.to };
+
+              return (
                   <Link
-                    key={item.name}
-                    onClick={() => handleNavClick(item.href)}
-                    className="text-md px-2 font-medium text-[var(--color-text-primary)] hover:text-accent-secondary transition-colors duration-200 flex items-center gap-1"
+                      key={item.name}
+                      {...linkProps} // Spreads either onClick or to prop
+                      className="text-md px-2 font-medium text-[var(--color-text-primary)] hover:text-accent-secondary transition-colors duration-200 flex items-center gap-1"
                   >
-                    {item.icon && <item.icon className="inline-block w-4 h-4" />}
-                    {item.name}
+                      {item.icon && <item.icon className="inline-block w-4 h-4" />}
+                      {item.name}
                   </Link>
                 );
-              } else if (item.to) {
-                // React Router navigation
-                return (
-                  <Link
-                    key={item.name}
-                    to={item.to}
-                    className="text-md px-2 font-medium text-[var(--color-text-primary)] hover:text-accent-secondary transition-colors duration-200 flex items-center gap-1"
-                  >
-                    {item.icon && <item.icon className="inline-block w-4 h-4" />}
-                    {item.name}
-                  </Link>
-                );
-              } else {
-                // Fallback in case neither href nor to is defined
-                return null;
-              }
             })}
             <button
               onClick={() => {
@@ -137,20 +126,29 @@ const Header = (props) => {
           {/* 2. Icon-Only Navigation (Visible on MD and LG screens) */}
           {/* ------------------------------------------- */}
           <nav className="hidden md:flex xl:hidden items-center space-x-2">
-            {navItems.map((item) => (
-              <Tooltip key={item.name} label={item.name} side="bottom">
-                <Link
-                  key={item.name}
-                  onClick={() => handleNavClick(item.href)}
-                  // Apply the button styling for better hover effect on icons
-                  className="p-2 rounded-full text-[var(--color-text-primary)] hover:text-accent-secondary hover:bg-support-muted/20 transition-colors duration-200"
-                  aria-label={item.name}
-                >
-                  {/* Only show the icon */}
-                  {item.icon && <item.icon className="w-6 h-6" />}
-                </Link>
-              </Tooltip>
-            ))}
+            {navItems.map((item) => {
+              // Only render an item if it has either 'href' or 'to' defined
+              if (!item.href && !item.to) return null;
+
+              const linkProps = item.href 
+                  ? { onClick: () => handleNavClick(item.href) } 
+                  : { to: item.to };
+
+              return (
+                <Tooltip key={item.name} label={item.name} side="bottom">
+                  <Link
+                    key={item.name}
+                    {...linkProps} // Spreads either onClick or to prop
+                    // Apply the button styling for better hover effect on icons
+                    className="p-2 rounded-full text-[var(--color-text-primary)] hover:text-accent-secondary hover:bg-support-muted/20 transition-colors duration-200"
+                    aria-label={item.name}
+                  >
+                    {/* Only show the icon */}
+                    {item.icon && <item.icon className="w-6 h-6" />}
+                  </Link>
+                </Tooltip>
+              );
+            })}
             <Tooltip key="Resume" label="Resume" side="bottom">
               <button
                 onClick={() => {
@@ -189,16 +187,25 @@ const Header = (props) => {
         }`}
       >
         <nav className="px-4 pt-2 pb-4 flex flex-col gap-2 bg-[var(--color-bg-primary)] border-t border-accent-primary/20">
-          {navItems.map((item) => (
-            <Link
-              key={item.name}
-              onClick={() => handleNavClick(item.href)}
-              className="py-2 text-[var(--color-text-primary)] hover:text-accent-secondary transition-colors"
-            >
-              {item.icon && <item.icon className="inline-block mr-2 w-4 h-4" />}
-              {item.name}
-            </Link>
-          ))}
+          {navItems.map((item) => {
+            // Only render an item if it has either 'href' or 'to' defined
+            if (!item.href && !item.to) return null;
+
+            const linkProps = item.href 
+                  ? { onClick: () => handleNavClick(item.href) } 
+                  : { to: item.to };
+
+            return (
+              <Link
+                key={item.name}
+                {...linkProps} // Spreads either onClick or to prop
+                className="py-2 text-[var(--color-text-primary)] hover:text-accent-secondary transition-colors"
+              >
+                {item.icon && <item.icon className="inline-block mr-2 w-4 h-4" />}
+                {item.name}
+              </Link>
+            )
+          })}
           <button
             onClick={() => {
               navigateToResume();

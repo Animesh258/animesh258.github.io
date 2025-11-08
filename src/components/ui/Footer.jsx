@@ -77,36 +77,25 @@ const Footer = (props) => {
           <h3 className="font-heading mb-3 text-lg">Explore</h3>
           <ul className="space-y-2 text-sm">
             {navItems.map((item) => {
-              if (item.href) {
-                return (
-                  <li key={item.name.toLowerCase()}>
-                    <Link
-                      onClick={() => handleNavClick(`${item.href}`)}
-                      className="hover:text-accent-secondary transition-colors duration-300"
-                    >
-                      {item.icon && <item.icon className="inline-block mr-2 w-4 h-4" />}
-                      {item.name}
-                    </Link>
-                  </li>
-                )
-              } else if(item.to) {
-                return (
-                  <li key={item.name.toLowerCase()}>
-                    <Link
-                      to={item.to}
-                      className="hover:text-accent-secondary transition-colors duration-300"
-                    >
-                      {item.icon && <item.icon className="inline-block mr-2 w-4 h-4" />}
-                      {item.name}
-                    </Link>
-                  </li>
-                )
-              } else {
-                return null;
-              }
+              // Only render an item if it has either 'href' or 'to' defined
+              if (!item.href && !item.to) return null;
+
+              const linkProps = item.href 
+                ? { onClick: () => handleNavClick(`${item.href}`) } 
+                : { to: item.to };
+
+              return (
+                <li key={item.name.toLowerCase()}>
+                  <Link
+                    {...linkProps} // Spreads either onClick or to prop
+                    className="hover:text-accent-secondary transition-colors duration-300"
+                  >
+                    {item.icon && <item.icon className="inline-block mr-2 w-4 h-4" />}
+                    {item.name}
+                  </Link>
+                </li>
+              );
             })}
-              
-              
           </ul>
         </div>
 

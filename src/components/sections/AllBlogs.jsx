@@ -16,7 +16,7 @@ const AllBlogs = () => {
     <section className="pt-36 pb-20 bg-[var(--color-bg-primary)] text-[var(--color-text-primary)] transition-colors duration-500">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <h1 className="text-4xl font-heading font-bold text-center mb-10">
-          The Arc's Insights: My POV
+          The Arc's Insights - POV
         </h1>
 
         {/* Search Bar */}

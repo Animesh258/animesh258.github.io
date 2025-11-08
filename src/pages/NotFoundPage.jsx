@@ -60,7 +60,7 @@ const NotFoundPage = () => {
                 <FaMagnifyingGlassChart className="mr-2" /> Projects
               </Link>
               <p className="text-xs sm:text-sm text-[var(--color-text-primary)]">
-                ← 🚶 Follow the Analyst
+                🚶 Follow the Analyst
               </p>
             </div>
 
@@ -74,7 +74,7 @@ const NotFoundPage = () => {
                 <TbBulbFilled className="mx-2" /> Insights <FaArrowRight className="ml-2" />
               </Link>
               <p className="text-xs sm:text-sm text-[var(--color-text-primary)]">
-                Follow the Designer 🤸 →
+                Follow the Designer 🤸
               </p>
             </div>
           </div>
@@ -103,7 +103,6 @@ const NotFoundPage = () => {
           className="w-full max-w-sm sm:max-w-2xl select-none"
         />
       </div>
-
     </main>
   );
 };

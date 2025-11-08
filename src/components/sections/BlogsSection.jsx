@@ -30,7 +30,7 @@ const BlogsSection = () => {
           onClick={() => navigate("/blogs")}
           className="btn-primary text-lg px-8 py-3 transition-all duration-300 hover:scale-105"
         >
-          View All →
+          View All
         </button>
       </div>
     </section>

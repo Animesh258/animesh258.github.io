@@ -2,6 +2,7 @@ import React from "react";
 import projectsData from "../../data/projects.json";
 import ProjectCard from "../ui/ProjectCard";
 import { useNavigate } from "react-router-dom";
+import { CiGrid42 } from "react-icons/ci";
 
 const ProjectsSection = () => {
     const navigate = useNavigate();
@@ -34,6 +35,7 @@ const ProjectsSection = () => {
                         className="btn-primary text-lg px-8 py-3"
                         onClick={() => navigate("/projects")}
                     >
+                        {/* <CiGrid42 size={20} className="inline-block items-center"/>  */}
                         View Full Gallery
                     </button>
                 </div>
