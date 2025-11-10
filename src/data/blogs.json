@@ -20,7 +20,7 @@
   {
     "id": 3,
     "title": "🧠 SELECT 1 FROM DUEL - But Why Though?",
-    "banner": "/assets/images/blog-banners/AM-Blog-Banner-Blog-001.png",
+    "banner": "/assets/images/blog-banners/AM-Blog-Banner-Blog-003.png",
     "summary": "Exploring the rationale behind using dual SELECT statements in SQL queries, and how this approach can optimize data retrieval and improve query performance.",
     "date": "Aug 2025",
     "tags": ["sql", "data analytics", "sql dialects", "spark sql"],
@@ -29,7 +29,7 @@
   {
     "id": 4,
     "title": "Which one should I learn first? 🤯",
-    "banner": "/assets/images/blog-banners/AM-Blog-Banner-Blog-001.png",
+    "banner": "/assets/images/blog-banners/AM-Blog-Banner-Blog-004.png",
     "summary": "A comparative analysis of popular database management systems to help beginners decide which SQL platform to learn first based on their career goals and project needs.",
     "date": "Aug 2025",
     "tags": ["sql", "database", "data analytics", "sql dialects"],
@@ -38,7 +38,7 @@
   {
     "id": 5,
     "title": "✨ Hidden Gems in Excel #1 ✨",
-    "banner": "/assets/images/blog-banners/AM-Blog-Banner-Blog-001.png",
+    "banner": "/assets/images/blog-banners/AM-Blog-Banner-Blog-005.png",
     "summary": "Unveiling some of the lesser-known features and tricks in Excel that can significantly enhance dashboard's aesthetics and user experience.",
     "date": "Sep 2025",
     "tags": ["Excel", "Dashboard", "Data Visualization", "linked pictures", "heatmaps", "heat maps in excel"],
@@ -47,7 +47,7 @@
   {
     "id": 6,
     "title": "Who says Word docs can’t look like VS Code? 😉",
-    "banner": "/assets/images/blog-banners/AM-Blog-Banner-Blog-001.png",
+    "banner": "/assets/images/blog-banners/AM-Blog-Banner-Blog-006.png",
     "summary": "A creative guide on customizing Microsoft Word documents to mimic the sleek and modern interface of VS Code, enhancing the appearance of project documentation.",
     "date": "Oct 2025",
     "tags": ["MS Word", "Documentation", "Productivity Hacks", "Word doc hacks", "code editor style"],
@@ -56,7 +56,7 @@
   {
     "id": 7,
     "title": "✨ Hidden Gems in Excel #2 ✨",
-    "banner": "/assets/images/blog-banners/AM-Blog-Banner-Blog-001.png",
+    "banner": "/assets/images/blog-banners/AM-Blog-Banner-Blog-007.png",
     "summary": "Diving deeper into Excel's hidden features, this article explores advanced tips and tricks to further elevate your dashboard designs and improve data presentation.",
     "date": "Oct 2025",
     "tags": ["Excel", "Dashboard", "Data Visualization", "excel tips and tricks", "advanced excel", "linked pictures", "Lookup", "Image Lookup", "VLookUp", "dynamic backgrounds", "embeded pictures into cells"],
@@ -65,7 +65,7 @@
   {
     "id": 8,
     "title": "7 tips for an effective Excel dashboard",
-    "banner": "/assets/images/blog-banners/AM-Blog-Banner-Blog-001.png",
+    "banner": "/assets/images/blog-banners/AM-Blog-Banner-Blog-008.png",
     "summary": "Essential tips and best practices for creating impactful Excel dashboards that effectively communicate data insights and support decision-making processes.",
     "date": "Oct 2025",
     "tags": ["Excel", "Dashboard", "Data Visualization", "dashboard tips", "excel dashboard best practices"],
