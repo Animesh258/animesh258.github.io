@@ -24,6 +24,10 @@ export const navMapping = {
       { name: "Home", to: "/", icon: FaHome },
     ],
     showFooterNavs: false,
+    singlePageNavItems: [
+      { name: "Home", to: "/", icon: FaHome },
+      { name: "Insights Gallery", to: "/blogs", icon: CiGrid42 },
+    ],
   },
   "/projects": {
     navItems: [
@@ -33,7 +37,7 @@ export const navMapping = {
     singlePageNavItems: [
       { name: "Home", to: "/", icon: FaHome },
       { name: "Project Gallery", to: "/projects", icon: CiGrid42 },
-    ]
+    ],
   }
 };
 

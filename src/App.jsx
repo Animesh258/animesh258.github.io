@@ -18,6 +18,7 @@ const App = () => {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/blogs" element={<BlogsPage />} />
+          <Route path="/blogs/:blogId" element={<BlogsPage />} />
           <Route path="/projects" element={<ProjectsPage />} />
           <Route path="/projects/:projectId" element={<ProjectsPage />} />
           {/* Dedicated 404 hash route */}

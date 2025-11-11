@@ -21,6 +21,11 @@ const Header = (props) => {
     basePath = "/projects";
   }
 
+  // If the path starts with /blogs/, normalize it to /blogs
+  if (basePath.startsWith("/blogs")) {
+    basePath = "/blogs";
+  }
+
   let navItems = navMapping[basePath]?.navItems || [];
   if (props.useSinglePageNav && navMapping[basePath]?.singlePageNavItems) {
     navItems = navMapping[basePath]?.singlePageNavItems;
@@ -70,7 +75,7 @@ const Header = (props) => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex justify-between items-center">
         {/* Logo */}
         <Link
-          href="/"
+          to="/"
           onClick={() => handleNavClick("#home")}
           className="flex items-center gap-2"
         >

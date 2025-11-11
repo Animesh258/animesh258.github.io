@@ -50,27 +50,39 @@ const SingleProject = () => {
 
                 {/* Project Details (Case Study Content) */}
                 <div className="prose dark:prose-invert max-w-none">
-                    <h2 className="text-3xl font-heading">The Ani-Lytic Arc: Process & Metamorphosis</h2>
-                    <span>
-                        <ReactMarkdown>{project.summary}</ReactMarkdown>
-                    </span>
+                    <h2 className="text-3xl font-heading mb-8">The Ani-Lytic Arc: Process & Metamorphosis</h2>
                     {/* Placeholder for long description content */}
                     <span>
                         <ReactMarkdown>{project.longDescription}</ReactMarkdown>
                     </span>
                     
                     {/* Key Metrics/Skills section */}
-                    <h3 className="text-2xl font-heading mt-8">Skills & Technology</h3>
-                    <ul>
-                        {project.techStack?.map((skill, index) => (
-                            <li key={index}><strong>{skill}</strong></li>
+                    <h3 className="text-2xl font-heading mt-8 mb-4">Skills & Technology</h3>
+
+                    {/* Core competency line */}
+                    {project.category && (
+                        <p className="mb-4 text-base">
+                            <strong className="text-[var(--color-accent)]">Core Competency:</strong> {project.category}
+                        </p>
+                    )}
+
+                    {/* Skill tags */}
+                    {project.techStack?.length > 0 && (
+                    <ul className="flex flex-wrap gap-3">
+                        {project.techStack.map((skill, index) => (
+                            <li
+                                key={index}
+                                className="bg-gray-700/20 dark:bg-gray-200/10 px-4 py-2 rounded-lg text-sm font-medium text-[var(--color-text-primary)] shadow-sm hover:shadow-md transition-shadow duration-200"
+                            >
+                                {skill}
+                            </li>
                         ))}
-                        <li><strong>Core Competency:</strong> {project.category}</li>
                     </ul>
+                    )}
                 </div>
 
                 {/* Action Buttons */}
-                <div className="mt-10 flex space-x-4 border-t pt-6 border-gray-700/50">
+                <div className="mt-10 flex space-x-4 border-t pt-6 border-support-muted/50">
                     {project.githubUrl && (
                         <a href={project.githubUrl} target="_blank" rel="noopener noreferrer" className="text-lg">
                             View Code on GitHub <FaArrowRight size={16} className="inline-block" />

@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { FaArrowRight } from "react-icons/fa";
 import ReactMarkdown from "react-markdown";
 
@@ -32,13 +33,21 @@ const BlogCard = ({ blog }) => {
 
         <div className="flex items-center justify-between text-sm mt-auto">
           <span className="text-xs text-neutral-muted">{blog.date}</span>
-          <a
+          <Link
+              to={`/blogs/${blog.id}`}
+              className="inline-flex items-center gap-1 text-accent-primary hover:text-accent-secondary transition-colors font-medium"
+              aria-label={`Read the case study for ${blog.title}`}
+          >
+              Read More <FaArrowRight size={16} />
+          </Link>
+
+          {/* <a
             href={blog.link}
             target="_blank"
             className="inline-flex items-center gap-1 text-accent-primary hover:text-accent-secondary transition-colors font-medium"
           >
             Read More <FaArrowRight size={16} />
-          </a>
+          </a> */}
         </div>
       </div>
     </article>
